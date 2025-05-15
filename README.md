@@ -10,3 +10,7 @@ It includes:
 - `.github/` – CI pipeline
 
 The code is placeholder only—start hacking!
+
+
+
+Join the Discord! https://discord.gg/hkCb5GzMq2
