@@ -1,0 +1,10 @@
+[package]
+name = "cloakedcanvas-core"
+version = "0.0.1"
+edition = "2021"
+
+[lib]
+name = "cloakedcanvas_core"
+path = "src/lib.rs"
+
+[dependencies]

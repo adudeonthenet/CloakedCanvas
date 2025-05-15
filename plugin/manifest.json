@@ -1,0 +1,19 @@
+{
+  "manifestVersion": 5,
+  "id": "com.cloakedcanvas.plugin",
+  "name": "CloakedCanvas Secure Export",
+  "version": "0.0.1",
+  "description": "Protect and preview creative assets before upload.",
+  "host": {
+    "app": "PHSP",
+    "minVersion": "22.0.0"
+  },
+  "entrypoints": [
+    {
+      "type": "panel",
+      "id": "exportPanel",
+      "label": "Secure Export",
+      "mainPath": "main.js"
+    }
+  ]
+}
