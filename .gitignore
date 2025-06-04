@@ -1,2 +1,4 @@
 core/target/
+extension/wasm/cloakedcanvas_wasm_bg.wasm
 *.log
+extension/icons/*.png
