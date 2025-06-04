@@ -1,6 +1,10 @@
 // Placeholder for WASM decrypt logic
 import init, { decrypt_data, KEY_SIZE, NONCE_SIZE } from '../pkg/cloakedcanvas_core.js';
 
+function nightshadeUnpoison(data: Uint8Array): Uint8Array {
+  return data.map(b => b ^ 0x13);
+}
+
 async function run() {
   await init();
   console.log('Decrypt WASM loaded');
@@ -12,7 +16,8 @@ async function run() {
     const bytes = new Uint8Array(buf);
     const nonce = bytes.slice(0, NONCE_SIZE);
     const ct = bytes.slice(NONCE_SIZE);
-    const pt = await decrypt_data(key, ct, nonce);
+    let pt = await decrypt_data(key, ct, nonce);
+    pt = nightshadeUnpoison(pt);
     const blob = new Blob([pt]);
     const img = document.createElement('img');
     img.src = URL.createObjectURL(blob);
