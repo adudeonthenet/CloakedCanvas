@@ -9,7 +9,10 @@ It includes:
 - `docs/` – initial architecture & workflow docs
 - `.github/` – CI pipeline
 
-The code is placeholder only—start hacking!
+The code is gradually taking shape. The `core` crate now provides basic
+AES‑GCM encryption utilities used by both the Photoshop plugin and the web
+decrypt page. Run `cargo test --manifest-path core/Cargo.toml` to execute the
+unit tests.
 
 
 

@@ -1,11 +1,13 @@
 # CloakedCanvas Architecture
 
-This project is split into multiple pieces:
+The project consists of three primary pieces:
 
-- `core/` – Rust library providing cryptographic and core utilities.
-  - Currently includes a `hello()` function and a simple `xor_mask` helper
-    used as a reversible placeholder until real encryption is implemented.
-- `plugin/` – Adobe UXP plugin skeleton for a "Secure Export" panel.
-- `web/` – WebAssembly page for decrypting protected assets.
+1. **Core (Rust)** – provides encryption utilities compiled for both native
+   and WebAssembly targets. Currently implements AES-GCM with a simple API.
+2. **Photoshop Plugin** – UXP panel that invokes the core library (via WASM)
+   to securely export selected layers or documents.
+3. **Web Decrypt Page** – standalone WASM page that decrypts `.ccvault`
+   files for viewing when shared with collaborators.
 
-Additional modules and details will be fleshed out in future sprints.
+This repository is early stage but now includes working Rust tests for the
+encryption module.
