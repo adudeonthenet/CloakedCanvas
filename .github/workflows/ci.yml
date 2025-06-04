@@ -19,6 +19,6 @@ jobs:
       - name: Lint web TypeScript
         run: |
           npm install -g typescript
-          npx tsc --noEmit web/ts/main.ts
+          npx tsc --noEmit -p tsconfig.json
       - name: Package plugin
         run: zip -r plugin.zip plugin/
