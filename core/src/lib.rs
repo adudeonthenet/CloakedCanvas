@@ -2,16 +2,20 @@
 
 mod crypto;
 mod file;
+#[cfg(not(target_arch = "wasm32"))]
 mod store;
 mod nightshade;
 mod shamir;
+#[cfg(not(target_arch = "wasm32"))]
 mod license;
 
 pub use crypto::{encrypt_data, decrypt_data, KEY_SIZE, NONCE_SIZE};
 pub use file::{encrypt_file, generate_preview_img, encrypt_docx_to_vault, rasterize_preview_from_pdf, default_watermark_path};
+#[cfg(not(target_arch = "wasm32"))]
 pub use store::{VaultStore, LocalDisk};
 pub use nightshade::{poison as nightshade_poison, unpoison as nightshade_unpoison};
 pub use shamir::{split_key, combine_key};
+#[cfg(not(target_arch = "wasm32"))]
 pub use license::license_heartbeat;
 
 pub fn hello() -> &'static str {
