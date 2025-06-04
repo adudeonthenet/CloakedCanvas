@@ -7,7 +7,7 @@ It includes:
 - `plugin/` – Adobe UXP Secure Export panel
 - `web/` – WASM decrypt page
 - `extension/` – cross‑browser upload interceptor
-- `docs/` – initial architecture & workflow docs
+- `docs/` – architecture, workflow and user/admin guides
 - `.github/` – CI pipeline
 
 The project now includes preview generation, vault encryption and a set of
@@ -22,6 +22,10 @@ decrypt page.
 Use `wasm-pack build core --out-dir extension/wasm --release` to
 compile the browser extension module.
 Icons are not committed; add 48x48 and 128x128 PNGs to `extension/icons/` before packaging.
+
+## Documentation
+User instructions can be found in [docs/USER_GUIDE.md](docs/USER_GUIDE.md) while
+administrative setup steps are covered in [docs/ADMIN_GUIDE.md](docs/ADMIN_GUIDE.md).
 
 
 
