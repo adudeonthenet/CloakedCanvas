@@ -20,5 +20,11 @@ jobs:
         run: |
           npm install -g typescript
           npx tsc --noEmit -p tsconfig.json
+      - name: Build extension WASM
+        run: |
+          cargo install wasm-pack --locked
+          wasm-pack build core --out-dir extension/wasm --release
+      - name: Package extension
+        run: zip -r extension.zip extension/
       - name: Package plugin
         run: zip -r plugin.zip plugin/
