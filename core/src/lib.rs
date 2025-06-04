@@ -1,8 +1,12 @@
 //! CloakedCanvas core crypto library.
 
 mod crypto;
+mod file;
+mod store;
 
 pub use crypto::{encrypt_data, decrypt_data, KEY_SIZE, NONCE_SIZE};
+pub use file::{encrypt_file, generate_preview_img, encrypt_docx_to_vault, rasterize_preview_from_pdf, default_watermark_path};
+pub use store::{VaultStore, LocalDisk};
 
 pub fn hello() -> &'static str {
     "CloakedCanvas core ready!"
