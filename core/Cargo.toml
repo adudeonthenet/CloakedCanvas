@@ -8,3 +8,5 @@ name = "cloakedcanvas_core"
 path = "src/lib.rs"
 
 [dependencies]
+aes-gcm = "0.10"
+rand = "0.8"
