@@ -6,6 +6,7 @@ edition = "2021"
 [lib]
 name = "cloakedcanvas_core"
 path = "src/lib.rs"
+crate-type = ["cdylib", "rlib"]
 
 [dependencies]
 aes-gcm = "0.10"
