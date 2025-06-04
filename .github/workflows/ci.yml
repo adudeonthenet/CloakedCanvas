@@ -10,8 +10,15 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions-rs/toolchain@v1
-      with:
-        toolchain: stable
-    - run: cargo test --manifest-path core/Cargo.toml
+      - uses: actions/checkout@v3
+      - uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+      - name: Test core
+        run: cargo test --manifest-path core/Cargo.toml
+      - name: Lint web TypeScript
+        run: |
+          npm install -g typescript
+          npx tsc --noEmit web/ts/main.ts
+      - name: Package plugin
+        run: zip -r plugin.zip plugin/

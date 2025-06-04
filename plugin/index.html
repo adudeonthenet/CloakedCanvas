@@ -6,7 +6,19 @@
 </head>
 <body>
   <h2>Secure Export</h2>
-  <button id="exportBtn">Export Selected</button>
+  <div>
+    <label><input type="radio" name="level" value="2" checked> Protected Preview (L2)</label>
+    <label><input type="radio" name="level" value="3"> Editable + Poison (L3)</label>
+  </div>
+  <div>
+    <select id="storage">
+      <option value="local">Local Disk</option>
+      <option value="s3">S3</option>
+      <option value="gdrive">Google Drive</option>
+      <option value="dropbox">Dropbox</option>
+    </select>
+  </div>
+  <button id="exportBtn">Export &amp; Copy Markdown</button>
   <script src="main.js"></script>
 </body>
 </html>
