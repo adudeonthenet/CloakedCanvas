@@ -11,4 +11,4 @@
 ## Protecting Documents
 Document protection follows the same flow but can operate on PDFs or other
 binary assets outside of Photoshop using the command‑line version of the core
-library (to be implemented).
+library.
